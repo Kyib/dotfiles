@@ -28,3 +28,12 @@ docbash() {
 docrails() {
  docker-compose exec web rails $1
 }
+
+# push .bashrc
+pushrc() {
+ cd ~/products/other/dotfiles/
+ cp ~/.bashrc ~/products/other/dotfiles/.bashrc
+ git add .bashrc
+ git commit -m $1
+ git push origin HEAD
+}
