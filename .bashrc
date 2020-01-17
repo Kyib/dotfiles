@@ -1,4 +1,6 @@
-# Test
+# bash
+alias rcreload='source ~/.bashrc'
+alias virc='vi ~/.bashrc'
 
 # permission
 alias chmod='chmod --preserve-root'
@@ -6,7 +8,18 @@ alias chmod='chmod --preserve-root'
 # Git
 alias gst='git status'
 alias gdf='git diff'
-alias gch='git checkout'
+
+gad() {
+ git add $@
+}
+
+gcm() {
+ git commit -m $1
+}
+
+gco() {
+ git checkout $1
+}
 
 gcb() {
  git checkout -b $1
@@ -26,7 +39,7 @@ docbash() {
 }
 
 docrails() {
- docker-compose exec web rails $1
+ docker-compose exec web rails $@
 }
 
 # push .bashrc
