@@ -17,6 +17,8 @@ gcm() {
  git commit -m $1
 }
 
+alias gcamend='git commit --amend'
+
 gco() {
  git checkout $1
 }
@@ -41,6 +43,23 @@ docbash() {
 docrails() {
  docker-compose exec web rails $@
 }
+
+docps() {
+ docker-compose ps
+}
+
+# kyrat
+alias sync_kyrat='cat ~/.bashrc ~/.sshbashrc > ~/.config/kyrat/bashrc'
+
+# fileserver
+# 社用：バックスラッシュで指定されたfilepathを開く
+# 動かず断念。バックスラッシュの扱いが難しい
+# openfs_bs() {
+# echo $1 | sed -e 's,\\\\,\/,g' | xargs open
+# }
+
+# launch apps
+alias textedit='open -a TextEdit'
 
 # push .bashrc
 pushrc() {
