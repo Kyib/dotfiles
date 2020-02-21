@@ -9,6 +9,10 @@ alias chmod='chmod --preserve-root'
 alias gst='git status'
 alias gdf='git diff'
 
+git_local_clean(){
+  git branch --merged | egrep -v '\*|develop|master' | xargs git branch -d
+}
+
 gad() {
  git add $@
 }
@@ -38,6 +42,10 @@ alias docrc='docker-compose exec web rails c'
 
 docbash() {
  docker exec -it $1 bash
+}
+
+docexec() {
+ docker-compose exec web $@
 }
 
 docrails() {
